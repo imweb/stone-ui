@@ -37,6 +37,25 @@ yo stone-component
 
 组件 DEMO 是调用组件中的 readme 文件进行渲染的，编辑比较简单，可参考已有例子，或[官方文档](https://react-styleguidist.js.org/docs/documenting.html)，如有疑问请询问ycxu
 
+## 使用组件
+
+每个包名字前面会有一个`stone-`前缀，使用 tnpm 安装，所有大写字母转成小写，使用`-`连接，如安装 `RadioCheckbox` 组件：
+
+```js
+tnpm i @tencent/stone-radio-checkbox
+```
+
+有些组件默认并没有导出，如 Table，默认导出的只有 Table 组件，其他的使用需要到 HOC 目录去引入，如需要使用排序，则
+
+```js
+import Table from '@tencent/stone-table';
+import { tableSort } from '@tencent/stone-table/HOC';
+
+const TableSort = tableSort(Table);
+```
+
+具体每个组件的目录，在组件 demo 预览中可见路径。
+
 ## 设计特色
 
 - 单包管理多包，每个 component 都可以单独引用
@@ -51,4 +70,7 @@ yo stone-component
 
 ## FAQ
 
+- [如何编写 readme](https://react-styleguidist.js.org/docs/documenting.html#writing-code-examples)
+- [props 属性说明](Code comments and propTypes)
+- [readme 与 example 关系](https://react-styleguidist.js.org/docs/documenting.html#usage-examples-and-readme-files)
 - [react styleguidist 官方入门实例](https://github.com/styleguidist/react-styleguidist/tree/master/examples/basic)
